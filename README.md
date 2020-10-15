@@ -26,3 +26,23 @@ There is also the possibility to create customized operators tailored for your n
 
 Sensors are similar to Operators but they only run if certain conditions are fulfilled. An example sensor is the S3KeySensor which looks for a given file in an S3 bucket and is triggered if the file is found.
 
+## Setup
+
+Now that we have knowledge about the core concepts of Airflow it's time to set it up. Airflow is installed with `pip` using the command 
+    pip install apache-airflow
+Before we can use Airflow we need to initiate its database which will hold all the information about the workflows. The location where Airflow will setup this database is stored in the environment variable `AIRFLOW_HOME`. To create a folder `airflow` in your current directory to hold the Airflow database run the command
+
+    export AIRFLOW_HOME="$(pwd)/airflow"
+
+Now to initiate the database in the set location we simply run
+
+        airflow initdb
+and 
+
+    airflow webserver -p 8080
+    
+to start the web server for the UI. The UI is now accessible at 
+
+    localhost:8080
+    
+
