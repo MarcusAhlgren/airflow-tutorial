@@ -36,13 +36,10 @@ Before we can use Airflow we need to initiate its database which will hold all t
 
 Now to initiate the database in the set location we simply run
 
-        airflow initdb
+    airflow initdb
 and 
-
     airflow webserver -p 8080
     
-to start the web server for the UI. The UI is now accessible at 
-
-    localhost:8080
+to start the web server for the UI. The UI is now accessible at `localhost:8080` in your browser.
     
 
