@@ -48,7 +48,7 @@ To run the example pipeline perform the following steps.
 
 1. Clone this repo.
 
-2. Build and run the docker image.
+2. Build images and run containers. Starts Airflow webserver.
 
         docker-compose up
     
