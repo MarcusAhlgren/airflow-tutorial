@@ -1,5 +1,5 @@
 # airflow-tutorial
-In this tutorial you will learn what Airflow is, why you should use it and how to set it up.
+In this tutorial you will learn what Airflow is, why you should use it and how to set it up. The repo also a an example machine learning pipeline built with Airflow in a dockerized format. See section **Example Pipeline**.
 
 ## Introduction
 
@@ -41,5 +41,21 @@ and
 
     airflow webserver -p 8080
 to start the web server for the UI. The UI is now accessible at `localhost:8080` in your browser.
+
+## Example Pipeline
+
+To run the example pipeline perform the following steps.
+
+1. Clone this repo.
+
+2. Build and run the docker image.
+    
+    docker-compose up
+    
+3. Go to the webserver at `localhost:8080` in your browser to access the Airflow UI.
+
+    
+
+
     
 
