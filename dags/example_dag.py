@@ -1,13 +1,10 @@
 import datetime as dt
 
 from airflow import DAG
-from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from src.process_raw_data import preprocess
 from src.make_predictions import predict
 
-def print_world():
-    print('world')
 
 default_args = {
     'owner': 'Marcus',
@@ -17,14 +14,13 @@ default_args = {
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 1,
-    'retry_delay': dt.timedelta(minutes = 5),
-    'backup': False
+    'retry_delay': dt.timedelta(minutes = 5)
 }
-
 
 dag = DAG('example_dag',
          default_args=default_args,
-         schedule_interval='0 * * * *',
+         schedule_interval='*/5 * * * *',
+         catchup = False
          )
 
 task1 = PythonOperator(task_id = 'process_raw_data',
@@ -34,6 +30,5 @@ task1 = PythonOperator(task_id = 'process_raw_data',
 task2 = PythonOperator(task_id = 'make_predictions',
                        python_callable = predict,
                        dag = dag)
-
 
 task1 >> task2
