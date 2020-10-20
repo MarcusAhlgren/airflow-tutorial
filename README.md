@@ -49,8 +49,8 @@ To run the example pipeline perform the following steps.
 1. Clone this repo.
 
 2. Build and run the docker image.
-    
-    docker-compose up
+
+        docker-compose up
     
 3. Go to the webserver at `localhost:8080` in your browser to access the Airflow UI.
 
